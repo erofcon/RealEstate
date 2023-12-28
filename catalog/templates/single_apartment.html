@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+    <!-- Header Start -->
+    <div class="container-fluid header bg-white p-0">
+        <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+            <div class="col-md-6 p-5 mt-lg-5">
+                <h1 class="fs-4 animated fadeIn mb-4">{{ apartment.title }}</h1>
+                <nav aria-label="breadcrumb animated fadeIn">
+                    <ol class="breadcrumb text-uppercase">
+                        <li class="breadcrumb-item"><a href="{% url 'catalog:apartments_list' %}">КАТАЛОГ КВАРТИР</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            {{ apartment.title }}
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="col-md-6 animated fadeIn">
+                <img class="img-fluid" src="{% static 'img/header.jpg' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+{% endblock %}
+
+{% block content %}
+    <div class="container px-3">
+        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+            {% for image in apartment.images.all %}
+                <div class="testimonial-item rounded p-3">
+                    <img class="img-fluid" src="{{ image.image.url }}" alt="">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="container-fluid wow fadeIn" data-wow-delay="0.1s">
+        <h1 class="display-6 mt-5 text-center">{{ apartment.title }}</h1>
+        <h5 class="display-6 ps-5 text-primary mb-3">
+            <i class="fa fa-ruble-sign text-primary me-2"></i>
+
+            {{ apartment.price }}
+        </h5>
+
+        <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+            <div class="col-md-6 p-5">
+                <ul>
+                    <li class="d-flex justify-content-between">
+                        <strong>Адрес:</strong>
+                        <span>{{ apartment.address }}</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                        <strong>Статус:</strong>
+                        <span>{{ apartment.get_status_display.capitalize }}</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                        <strong>Площать:</strong>
+                        <span>{{ apartment.sqft_living }}</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                        <strong>Комнаты:</strong>
+                        <span>{{ apartment.bedrooms }}</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                        <strong>Материал стен:</strong>
+                        <span>{{ apartment.wall_material }}</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                        <strong>Застройщик:</strong>
+                        <span>{{ apartment.the_developer }}</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                {{ apartment.description }}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid wow fadeIn mb-5" data-wow-delay="0.1s">
+        <div class="row g-0 flex-column-reverse flex-md-row">
+            <div class="col-md-6 p-5">
+                <img class="img-fluid" src="{{ apartment.plan.url }}" alt="">
+            </div>
+            <div class="col-md-6 pt-5">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1ses-419!2sve!4v1510329142834"
+                        width="100%" height="460" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    {% include 'contact_base.html' %}
+{% endblock %}

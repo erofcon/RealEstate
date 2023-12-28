@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+    <!-- Header Start -->
+    <div class="container-fluid header bg-white p-0">
+        <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+            <div class="col-md-6 p-5 mt-lg-5">
+                <h1 class="display-5 animated fadeIn mb-4">О НАС</h1>
+                <nav aria-label="breadcrumb animated fadeIn">
+                    <ol class="breadcrumb text-uppercase">
+                        <li class="breadcrumb-item"><a href="{% url 'home:index' %}">Домой</a></li>
+                        <li class="breadcrumb-item text-body active" aria-current="page">О НАС</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="col-md-6 animated fadeIn">
+                <img class="img-fluid" src="{% static 'img/header.jpg' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+{% endblock %}
+
+{% block content %}
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                        <img class="img-fluid w-100" src="{% static 'img/about.jpg' %}" alt="#">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="mb-4">Агентство недвижимости №1 в Кабардино-Балкарии</h1>
+                    <p class="mb-4">
+                        Здесь вы найдете профессиональную помощь и качественные услуги в сфере покупки, продажи, аренды
+                        жилой и коммерческой недвижимости.
+                        Мы работаем в сфере недвижимости и строим компанию нового типа – сочетаем инновации,
+                        ответственность и человеческое отношение к каждому клиенту. Компания инвестирует в обучение,
+                        автоматизацию процессов, исследования и качество услуг.
+                        Наши клиенты имеют доступ к огромной базе жилья, экономят деньги за счет эксклюзивных скидок от
+                        надежных партнеров и свое время, потому что все этапы сделки можно оформить в нашем офисе
+                        Мы постоянно развиваемся для того, чтобы делать клиентов счастливыми, а сотрудников и партнеров
+                        — успешными.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="col wow fadeIn" data-wow-delay="0.5s">
+                <h1 class="mb-4 text-center wow fadeInUp">Лидеры на рынке недвижимости</h1>
+                <p>
+                    Агентство недвижимости <span class="text-primary">HomeLand</span> - это команда профессионалов,
+                    которые помогут вам найти идеальный
+                    вариант недвижимости, соответствующий вашим потребностям и возможностям. Мы ценим каждого клиента и
+                    гарантируем полную конфиденциальность и защиту ваших интересов на всех этапах сделки.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="wow fadeInUp row" data-wow-delay="0.1s">
+                <div class="col-lg-4 bg-light rounded p-3">
+                    <div class="bg-white border rounded p-4">
+                        <p>Профессиональные консультации по вопросам недвижимости: поиск, оценка, проверка документов,
+                            юридическое сопровождение сделок.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 bg-light rounded p-3">
+                    <div class="bg-white border rounded p-4">
+                        <p>Оценка недвижимости: определение рыночной стоимости объекта, подготовка отчетов и
+                            рекомендаций для клиентов.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 bg-light rounded p-3">
+                    <div class="bg-white border rounded p-4">
+                        <p>Помощь в получении ипотеки: подбор оптимальных ипотечных программ, сбор документов, подача
+                            заявки на получение ипотеки.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 bg-light rounded p-3">
+                    <div class="bg-white border rounded p-4">
+                        <p>Юридические услуги: полное сопровождение сделок с недвижимостью, регистрация прав
+                            собственности, оформление договоров купли-продажи и аренды.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 bg-light rounded p-3">
+                    <div class="bg-white border rounded p-4">
+                        <p>Безопасность сделок. Мы гарантируем юридическую чистоту всех объектов и полное соблюдение
+                            законодательства при проведении сделок.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 bg-light rounded p-3">
+                    <div class="bg-white border rounded p-4">
+                        <p>Индивидуальный подход к каждому клиенту. Мы учитываем все Ваши пожелания и требования, чтобы
+                            подобрать идеальный вариант недвижимости.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'testimonial.html' %}
+    {% include 'call_to_action.html' %}
+
+
+
+{% endblock %}
