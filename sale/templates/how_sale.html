@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="rounded p-3">
+                <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                    <div class="row g-5 align-items-center">
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="mb-4">
+                                <h1 class="mb-3">Поможем продать недвижимость быстро и выгодно</h1>
+                                <p>Разместите объявление о продаже и покупатели увидят его на сайте</p>
+                            </div>
+                            <a href="{% url 'sale:post' %}" class="btn btn-primary py-3 px-4 me-2"><i class="fa fa-phone-alt me-2"></i>
+                                Добавить объявление
+                            </a>
+                        </div>
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                            <img class="img-fluid rounded w-100" src="{% static 'img/sale.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl">
+        <div class="container">
+
+            <div class="rounded p-3">
+                <div class="bg-white rounded p-4">
+                    <h1 class="mb-3">Как это работает</h1>
+                    <div class="row g-5 align-items-center">
+                        <div class="col-lg-7 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item bg-white">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed bg-white" type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                                aria-controls="flush-collapseOne">
+                                            1. Размещение объявления
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                         data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <p>
+                                                - Добавьте объявление о своей недвижимости, и через 2 часа
+                                                покупатели увидят его на сайте. Или просто оставьте свой телефон и мы
+                                                всё
+                                                сделаем.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item bg-white">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed bg-white" type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                                aria-controls="flush-collapseTwo">
+                                            2. Подготовка к продаже
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                         data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <p>- Добавим фотографии, планировку и сделаем привлекательное описание
+                                                вашего
+                                                предложения.</p>
+                                            <p>- Подписание агентского договора в офисе или онлайн.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item bg-white">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed bg-white" type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                                aria-controls="flush-collapseThree">
+                                            3. Поиск покупателей
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                         data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <p>- Мы разместим ваше объявление на популярных площадках города по поиску
+                                                недвижимости.</p>
+                                            <p>- Специалист по недвижимости проведет личные или онлайн показы вашего
+                                                объекта для
+                                                заинтересованных покупателей.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item bg-white">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed bg-white" type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#flush-collapseFore" aria-expanded="false"
+                                                aria-controls="flush-collapseThree">
+                                            4. Заключение сделки
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseFore" class="accordion-collapse collapse"
+                                         data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <p>- Берём на себя весь процесс подготовки документов и проведения
+                                                сделки.</p>
+                                            <p>- Организовываем и сопровождаем процесс передачи задатка, можно
+                                                онлайн.</p>
+                                            <p>- Оплачиваете услуги компании.</p>
+                                            <p>- Проводим сделку , регистрируем право собственности в МФЦ или через
+                                                электронную
+                                                регистрацию.</p>
+                                            <p>- Передаете ключи.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
+                            <img class="img-fluid rounded w-100" src="{% static 'img/deal.png' %}" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

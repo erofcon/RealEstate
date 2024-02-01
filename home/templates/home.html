@@ -6,12 +6,11 @@
     <div class="container-fluid header bg-white p-0">
         <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
             <div class="col-md-6 p-5 mt-lg-5">
-                <h1 class="display-5 animated fadeIn mb-4">Найдите <span class="text-primary">идеальную квартиру</span>
-                    для жизни
-                    со своей семьей</h1>
+                <h1 class="display-5 animated fadeIn mb-4">Найдите <span
+                        class="text-primary">идеальную недвижемость</span></h1>
                 <p class="animated fadeIn mb-4 pb-2">Выбирайте среди проверенной базы объектов. Сделку под ключ для вас
                     организуют наши специалисты по недвижимости</p>
-                <a href="#" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Начать</a>
+                <a href="{% url 'catalog:apartments_list' %}" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Начать</a>
             </div>
             <div class="col-md-6 animated fadeIn">
                 <div class="owl-carousel header-carousel">
@@ -31,6 +30,8 @@
 
 {% block content %}
 
+    {#    {% include 'search.html' %}#}
+
     <!-- Category Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -39,7 +40,7 @@
                 <p>Ищете надежные риэлторские агентства в Нальчике? Мы предоставляем комплексное
                     риэлторское, брокерское, юридическое сопровождение.</p>
             </div>
-            <div class="row g-4">
+            <div class="row g-4 align-items-center justify-content-center">
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                     <a class="cat-item d-block bg-light text-center rounded p-3" href="">
                         <div class="rounded p-4">
@@ -86,17 +87,8 @@
                             <div class="icon mb-3">
                                 <img class="img-fluid" src="{% static 'img/icon-building.png' %}" alt="Icon">
                             </div>
-                            <h6>Организация и проведение просмотров квартир</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                        <div class="rounded p-4">
-                            <div class="icon mb-3">
-                                <img class="img-fluid" src="{% static 'img/icon-neighborhood.png' %}" alt="Icon">
-                            </div>
-                            <h6>Подбор вариантов недвижимости с учетом всех пожеланий и потребностей</h6>
+                            <h6>Подбор вариантов недвижимости с учетом всех
+                                пожеланий и потребностей</h6>
                         </div>
                     </a>
                 </div>
@@ -116,7 +108,10 @@
                             <div class="icon mb-3">
                                 <img class="img-fluid" src="{% static 'img/icon-luxury.png' %}" alt="Icon">
                             </div>
-                            <h6>Рекламное продвижение объекта на различных площадках</h6>
+                            <h6>
+                                Оформление договоров купли-продажи.Помощь в подготовке и оформлении
+                                документов для сделки
+                            </h6>
                         </div>
                     </a>
                 </div>
@@ -135,7 +130,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="mb-4">Место, где можно найти <span class="text-primary"> Идеальную Квартиру</span></h1>
+                    <h1 class="mb-4">Место, где можно найти <span class="text-primary"> Идеальную Недвижемость</span></h1>
                     <p class="mb-4">Мы работаем в сфере недвижимости и строим компанию нового типа – сочетаем инновации,
                         ответственность и человеческое отношение к каждому клиенту. Компания инвестирует в обучение,
                         автоматизацию процессов, исследования и качество услуг.</p>
@@ -143,7 +138,7 @@
                     <p><i class="fa fa-check text-primary me-3"></i>Оформление всех этапов сделок</p>
                     <p><i class="fa fa-check text-primary me-3"></i>Экономия деньг за счет эксклюзивных скидок от
                         надежных партнеров</p>
-                    <a class="btn btn-primary py-3 px-5 mt-3" href="">Узнать больше</a>
+                    <a class="btn btn-primary py-3 px-5 mt-3" href="{% url 'about:about' %}">Узнать больше</a>
                 </div>
             </div>
         </div>
@@ -163,13 +158,10 @@
         {% include 'apartment_catalog_base.html' with apartments=apartments %}
 
         <div class="col-12 text-center">
-            <a class="btn btn-primary py-3 px-5" href="">Показать больше</a>
+            <a class="btn btn-primary py-3 px-5" href="{% url 'catalog:apartments_list' %}">Показать больше</a>
         </div>
     {% endif %}
 
-
-
-    {% include 'call_to_action.html' %}
 
 
     {% include 'testimonial.html' %}

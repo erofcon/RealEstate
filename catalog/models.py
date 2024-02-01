@@ -10,9 +10,6 @@ STATUS_CHOICES = (
 APARTMENT_TYPE = (
     ('secondary', 'вторичная'),
     ('new_buildings', 'новостройки'),
-    ('House_and_plots', 'Дом и участки'),
-    ('commercial', 'коммерческая'),
-    ('garages', 'гаражи'),
 )
 
 
@@ -21,10 +18,11 @@ class Apartments(models.Model):
     description = models.TextField('Описание')
     status = models.CharField('Статус', choices=STATUS_CHOICES, max_length=50, default='for_sale')
     type = models.CharField('Тип недвижимости', choices=APARTMENT_TYPE, max_length=70, default='new_buildings')
-    show = models.BooleanField('Показывать на сайте?', default=True)
+    show = models.BooleanField('Показывать на сайте?', default=False)
     price = models.IntegerField('Цена', default=0)
+    floor = models.IntegerField('Этаж', blank=True)
     bedrooms = models.IntegerField('Колличество комнат', default=0)
-    sqft_living = models.IntegerField('Сколько квадратных метров', default=0)
+    sqft_living = models.FloatField('Сколько квадратных метров', default=0)
     address = models.CharField('Адрес', max_length=250, default='')
     wall_material = models.CharField('Материал стен', max_length=250, blank=True)
     the_developer = models.CharField('Застройщик', max_length=250, blank=True)
@@ -41,7 +39,7 @@ class Apartments(models.Model):
         return self.images.first()
 
     class Meta:
-        verbose_name = 'Квартиры'
+        verbose_name = 'Квартиру'
         verbose_name_plural = 'Квартиры'
 
 

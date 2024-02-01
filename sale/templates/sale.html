@@ -1,0 +1,244 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="rounded p-3">
+                <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                    <div class="row g-5 align-items-center">
+                        <div class="col-lg-8 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="mb-4">
+                                <h1 class="mb-3">Продайте недвижимость быстро и без хлопот</h1>
+                                <p>Разместите объявление о продаже или обратитесь за помощью к нашим специалистам</p>
+                            </div>
+                            <button class="btn btn-primary py-3 px-4 me-2" data-bs-toggle="modal"
+                                    data-bs-target="#feedback-modal">Мне нужна помощь
+                            </button>
+                        </div>
+                        <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                            <img class="img-fluid rounded w-100" src="{% static 'img/search.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl">
+        <div class="container">
+            <div class="rounded p-3">
+                <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                    <h2>Добавить объявление</h2>
+                    <form id="postForm" method="post" class="mt-5" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="my-4">
+                            <label class="mb-2 fw-bold">{{ form.type.label }}</label>
+                            <div>
+                                {% for radio in form.type %}
+                                    <div class="form-check">
+                                        {{ radio }}
+                                        <label class="form-check-label"
+                                               for="{{ radio.id_for_label }}">{{ radio.choice_label }}</label>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="row gy-3">
+                            <div class="col-md-4">
+                                <label for="{{ form.auto_id }}"
+                                       class="form-label fw-bold">{{ form.address.label_tag }}</label>
+                                {{ form.address }}
+                            </div>
+                            <div class="col-md-4">
+                                <label for="{{ form.auto_id }}"
+                                       class="form-label fw-bold">{{ form.floor.label_tag }}</label>
+                                {{ form.floor }}
+                            </div>
+                        </div>
+
+                        <div class="my-4">
+                            <div class="col-md-4">
+                                <label for="{{ form.auto_id }}"
+                                       class="form-label fw-bold">{{ form.bedrooms.label_tag }}</label>
+                                {{ form.bedrooms }}
+                            </div>
+                        </div>
+
+                        <div class="my-4">
+                            <div class="row gy-3">
+                                <div class="col-md-4">
+                                    <label for="{{ form.auto_id }}"
+                                           class="form-label fw-bold">{{ form.sqft_living.label_tag }}</label>
+                                    <div class="input-group has-validation">
+                                        {{ form.sqft_living }}
+                                        <span class="input-group-text">
+                                                            <span class="eWjiV">м<sup>2</sup></span>
+                                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="{{ form.auto_id }}"
+                                           class="form-label fw-bold">{{ form.wall_material.label_tag }}</label>
+                                    {{ form.wall_material }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="my-4">
+                            <div class="row gy-3">
+                                <div class="col-md-4">
+                                    <div class="row pb-2">
+                                        <label for="{{ form.auto_id }}"
+                                               class="form-label fw-bold pb-0 mb-0">{{ form.plan.label_tag }} </label>
+                                        <small>только (jpeg/png)</small>
+                                    </div>
+
+                                    {{ form.plan }}
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row pb-2">
+                                        <label for="{{ form.auto_id }}"
+                                               class="form-label fw-bold pb-0 mb-0">{{ images_form.image.label_tag }}
+                                        </label>
+                                        <small>только (jpeg/png)</small>
+                                    </div>
+
+                                    {{ images_form.image }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="my-4">
+                            <div class="col-md-4">
+                                <label for="{{ form.auto_id }}"
+                                       class="form-label fw-bold">{{ form.title.label_tag }}</label>
+                                {{ form.title }}
+                            </div>
+                        </div>
+
+                        <div class="my-4">
+                            <div class="col-md-8">
+                                <label for="{{ form.auto_id }}"
+                                       class="form-label fw-bold">{{ form.description.label_tag }}</label>
+                                {{ form.description }}
+                            </div>
+                        </div>
+
+                        <div class="my-4">
+                            <div class="col-md-4">
+                                <label for="{{ form.auto_id }}"
+                                       class="form-label fw-bold">{{ form.price.label_tag }}</label>
+                                <div class="input-group has-validation">
+                                    {{ form.price }}
+                                    <span class="input-group-text">
+                                                            <span class="eWjiV">₽</span>
+                                                        </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="my-4">
+                            <div class="col-md-4">
+                                <label for="{{ form.auto_id }}"
+                                       class="form-label fw-bold">{{ form.contacts.label_tag }}</label>
+                                {{ form.contacts }}
+                            </div>
+                        </div>
+
+                        <div class="my-4">
+                            <input type="submit" value="Опубликовать" class="btn btn-primary py-3 px-4 me-2">
+                        </div>
+                        {{ form.errors }}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="success-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="col">
+                        <div class="form h-100 contact-wrap p-5">
+                            <h3 class="text-center mb-5">Объявление успаешно добавлено! Через 2 часа покупатели увидят
+                                его на
+                                сайте!</h3>
+                            <div class="mb-5">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-5 form-group text-center">
+                                        <button type="button" class="btn btn-success btn-block" data-bs-dismiss="modal">
+                                            Закрыть
+                                        </button>
+                                        <span class="submitting"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="error-modal" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="col">
+                        <div class="form h-100 contact-wrap p-5">
+                            <h3 class="text-center mb-5">Ошибка при добавлении объявления! Проверьте введенные
+                                данные</h3>
+                            <div class="mb-5">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-5 form-group text-center">
+                                        <button type="button" class="btn btn-success btn-block" data-bs-dismiss="modal">
+                                            Закрыть
+                                        </button>
+                                        <span class="submitting"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        $(function () {
+            $('#postForm').on('submit', function (event) {
+                event.preventDefault()
+                var formData = new FormData(this);
+                $.ajax({
+                    url: '{% url "sale:post" %}',
+                    type: 'POST',
+                    data: formData,
+                    success: function (data, textStatus, xhr) {
+                        if (xhr.status === 200) {
+                            $('#success-modal').modal('show');
+                        } else {
+                            $('#error-modal').modal('show')
+                        }
+
+
+                    },
+                    error: function (response) {
+                        $('#error-modal').modal('show')
+                        console.log(response)
+                    },
+                    cache: false,
+                    contentType: false,
+                    processData: false
+                });
+                $('#postForm')[0].reset();
+            });
+        });
+    </script>
+
+{% endblock %}

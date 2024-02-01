@@ -1,41 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block content %}
 
-{% block header %}
-    <!-- Header Start -->
-    <div class="container-fluid header bg-white p-0">
+    {#    {% include 'search.html' %}#}
+    <div class="container-fluid header bg-white mt-5">
         <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
             <div class="col-md-6 p-5 mt-lg-5">
                 <h1 class="display-5 animated fadeIn mb-4">Каталог квартир</h1>
-                <nav aria-label="breadcrumb animated fadeIn">
-                    <ol class="breadcrumb text-uppercase">
-                        <li class="breadcrumb-item"><a href="{% url 'home:index' %}">Домой</a></li>
-                        <li class="breadcrumb-item text-body active" aria-current="page">Каталог квартир</li>
-                    </ol>
-                </nav>
+                <p class="animated fadeIn mb-4 pb-2">Наша компания защищает интересы клиента в случае юридических
+                    проблем по сделке</p>
             </div>
             <div class="col-md-6 animated fadeIn">
-                <img class="img-fluid" src="{% static 'img/header.jpg' %}" alt="">
-            </div>
-        </div>
-    </div>
-    <!-- Header End -->
-{% endblock %}
-
-
-{% block content %}
-
-    <div class="container">
-        <div class="row g-0 gx-5 align-items-end p-3">
-            <div class="col-lg-6">
-                <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
-                    <h1 class="mb-3">Каталог квартир</h1>
-                    <p>Наша компания защищает интересы клиента в случае юридических проблем по сделке</p>
-                </div>
-            </div>
-            <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
-                <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
+                <ul class="nav nav-pills d-inline-flex mb-5">
                     <li class="nav-item me-2">
                         <a class="btn btn-outline-primary {% if category == 'all' %} active {% endif %}"
                            href="{% url 'catalog:category' 'all' %}">Все</a>
@@ -51,6 +28,7 @@
                 </ul>
             </div>
         </div>
+
     </div>
 
     {% include 'apartment_catalog_base.html' with apartments=page_obj %}

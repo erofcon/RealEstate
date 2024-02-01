@@ -5,7 +5,7 @@ from django.db import models
 
 class Feedback(models.Model):
     name = models.CharField('Имя', max_length=250)
-    email = models.EmailField('Email', max_length=250, blank=True)
+    contacts = models.TextField('Контакты для связи')
     subject = models.TextField('Сообщение')
     date = models.DateTimeField('Дата публикации', default=datetime.now())
 

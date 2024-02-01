@@ -1,0 +1,77 @@
+<!-- Search Start -->
+<div class="container-fluid bg-light mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
+    <div class="d-flex align-items-center bg-white rounded p-3"
+         style="border: 1px dashed rgba(0, 185, 142, .3)">
+        <div class="container">
+            <div class="row g-2">
+                <div class="col-md-10">
+                    <div class="row g-2">
+                        <div class="col-md-4">
+                            <h6><i class="fa fa-bed text-primary me-2"></i>
+                                Комнатность
+                            </h6>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                       id="exampleRadios1"
+                                       value="option1">
+                                <label class="form-check-label text-dark fw-bold" for="exampleRadios1">
+                                    1
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                       id="exampleRadios2"
+                                       value="option2">
+                                <label class="form-check-label text-dark fw-bold" for="exampleRadios2">
+                                    2
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                       id="exampleRadios3"
+                                       value="option2">
+                                <label class="form-check-label text-dark fw-bold" for="exampleRadios3">
+                                    3+
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-4 row py-4 py-md-0">
+                            <h6><i class="fa fa-ruble-sign text-primary me-2"></i>
+                                Стоимость</h6>
+                            <div class="col pe-1">
+                                <input type="text" class="form-control rounded-0 rounded-start" id="cc-expiration"
+                                       placeholder="От"
+                                       required="">
+                            </div>
+
+                            <div class="col ps-0">
+                                <input type="text" class="form-control rounded-0 rounded-end" id="cc-cvv"
+                                       placeholder="До" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-4 row">
+                            <h6><i class="fa fa-ruler-combined text-primary me-2"></i>
+                                Площадь, м2
+                            </h6>
+                            <div class="col pe-1">
+                                <input type="text" class="form-control rounded-0 rounded-start" id="cc-expiration"
+                                       placeholder="От" required="">
+                            </div>
+
+                            <div class="col ps-0">
+                                <input type="text" class="form-control rounded-0 rounded-end" id="cc-cvv"
+                                       placeholder="До" required="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <a class="btn btn-dark border-0 w-100 py-3" href="{% url 'catalog:apartments_list' %}">Поиск</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Search End -->
