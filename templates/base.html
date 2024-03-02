@@ -37,6 +37,11 @@
 
     <!-- Template Stylesheet -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!--    leaflet-->
+    <link rel="stylesheet" href="{% static 'css/leaflet.css' %}"/>
+    <script src="{% static 'js/leaflet.js' %}"></script>
+
 </head>
 
 <body>
@@ -52,14 +57,14 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid nav-bar bg-transparent">
+    <div class="container-fluid nav-bar bg-transparent" style="z-index: 99">
         <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
             <a href="{% url 'home:index' %}" class="navbar-brand d-flex align-items-center">
                 <div class="icon p-2 me-2">
                     <img class="img-fluid" src="{% static 'img/icon-deal.png' %}" alt="Icon"
                          style="width: 30px; height: 30px;">
                 </div>
-                <h1 class="m-0 p-0 text-primary">HomeLand</h1>
+                <h1 class="m-0 p-0 text-primary">Агентство ИБП</h1>
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -236,11 +241,12 @@
     <div class="container">
         <div class="copyright">
             <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">©2023 Компания «HomeLand»</a>, Все права защищены.
+                <div class="col-md-8 text-center text-md-start mb-3 mb-md-0">
+                    <span class="border-bottom">©2024 «Агентство имущественно-правовой безопасности»</span>, Все права
+                    защищены.
                     Designed By <a class="border-bottom" href="https://github.com/erofcon">erofcon</a>
                 </div>
-                <div class="col-md-6 text-center text-md-end">
+                <div class="col-md-4 text-center text-md-end">
                     <div class="footer-menu">
                         <a href="">Cookies</a>
                         <a href="">Help</a>
@@ -251,6 +257,7 @@
         </div>
     </div>
 </div>
+
 <!-- Footer End -->
 
 <script>
@@ -263,7 +270,6 @@
                 type: 'POST',
                 data: formData,
                 success: function (data, textStatus, xhr) {
-                    console.log(xhr)
                     if (xhr.status === 200) {
                         $('#feedback-modal').modal('hide');
                         $('#success-feedback-modal').modal('show');
@@ -275,15 +281,14 @@
                 error: function (response) {
                     $('#feedback-modal').modal('hide');
                     $('#error-feedback-modal').modal('show')
-                    console.log(response)
                 },
                 cache: false,
                 contentType: false,
                 processData: false
             });
-            
-            $('#contactForm')[0].reset();
         });
+
+        $('#contactForm')[0].reset();
     });
 
 </script>

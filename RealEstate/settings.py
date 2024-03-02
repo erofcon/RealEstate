@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'catalog',
     'feedback',
     'sale',
+    'telegram_bot',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Telegram Bot settings
+
+TELEGRAM_BOT_TOKEN = '6939051292:AAGGCKpvlwo_Bw_ECzCJOa1EW_GNzyP7n6A'
+
+PROXY_URL = 'https://telegg.tu/orig/bot'

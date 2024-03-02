@@ -3,6 +3,7 @@ from django.http import JsonResponse
 
 from .forms import ExternalApartmentsFormModel, ExternalApartmentsImagesForm
 from catalog.models import Images
+from telegram_bot.main_bot import send_message
 
 
 def how_sale(request):
@@ -13,17 +14,22 @@ def sale(request):
     if request.method == 'POST':
 
         form = ExternalApartmentsFormModel(request.POST, request.FILES)
-       
+
         if form.is_valid():
             instance = form.save(commit=True)
 
-            for f in request.FILES.getlist('image'):
-                external = Images(
-                    apartment=instance,
-                    image=f
-                )
-                external.save()
+            try:
+                for f in request.FILES.getlist('image'):
+                    external = Images(
+                        apartment=instance,
+                        image=f
+                    )
+                    external.save()
+            except Exception as e:
+                pass
 
+            message = "Добавлена новая квартира!"
+            send_message(message=message)
             return JsonResponse("Успешно отправлено", status=200, safe=False)
         else:
             return JsonResponse(form.errors, status=400, safe=False)

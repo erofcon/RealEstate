@@ -26,7 +26,6 @@ def apartments_list(request, category_id='all'):
 
 
 def single_apartment(request, pk=None):
-    print("hello")
     apartment = Apartments.objects.get(id=pk, show=True)
 
     data = {
