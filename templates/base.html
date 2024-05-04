@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>
         {% block title %}
-            Агентство недвижимости в Нальчике HomeLand: официальный сайт
+            Агентство недвижимости ИПБ: официальный сайт
         {% endblock %}
     </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -64,7 +64,7 @@
                     <img class="img-fluid" src="{% static 'img/icon-deal.png' %}" alt="Icon"
                          style="width: 30px; height: 30px;">
                 </div>
-                <h1 class="m-0 p-0 text-primary">Агентство ИБП</h1>
+                <h5 class="m-0 p-0 text-primary">АГЕНСТВО НЕДВИЖИМОСТИ ИПБ</h5>
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -196,15 +196,16 @@
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-white mb-4">Связаться</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3 fs"></i>КБР, г. Нальчик, ул. Пачева, д 32</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+7 999 862 89 88</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                </div>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3 fs"></i>КБР, г. Нальчик, ул. Пачева, д 36 офис 116
+                </p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+7 903 493 96 90</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>ramazanbaidaev@yandex.ru</p>
+                {#                <div class="d-flex pt-2">#}
+                {#                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>#}
+                {#                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>#}
+                {#                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>#}
+                {#                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>#}
+                {#                </div>#}
             </div>
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-white mb-4">Быстрые ссылки</h5>
@@ -217,22 +218,26 @@
                 <h5 class="text-white mb-4">Фотогалерея</h5>
                 <div class="row g-2 pt-2">
                     <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="{% static 'img/property-1.jpg' %}" alt="">
+                        <img class="img-fluid rounded bg-light p-1" src="{% static 'img/IMG-20240405-WA0221.jpg' %}"
+                             alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="{% static 'img/property-2.jpg' %}" alt="">
+                        <img class="img-fluid rounded bg-light p-1" src="{% static 'img/IMG-20240405-WA0222.jpg' %}"
+                             alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="{% static 'img/property-3.jpg' %}" alt="">
+                        <img class="img-fluid rounded bg-light p-1" src="{% static 'img/IMG-20240405-WA0223 (1).jpg' %}"
+                             alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="{% static 'img/property-4.jpg' %}" alt="">
+                        <img class="img-fluid rounded bg-light p-1" src="{% static 'img/IMG-20240405-WA0223.jpg' %}"
+                             alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="{% static 'img/property-5.jpg' %}" alt="">
+                        <img class="img-fluid rounded bg-light p-1" src="{% static 'img/img.jpg' %}" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="{% static 'img/property-6.jpg' %}" alt="">
+                        <img class="img-fluid rounded bg-light p-1" src="{% static 'img/img_4.jpeg' %}" alt="">
                     </div>
                 </div>
             </div>
@@ -242,17 +247,18 @@
         <div class="copyright">
             <div class="row">
                 <div class="col-md-8 text-center text-md-start mb-3 mb-md-0">
-                    <span class="border-bottom">©2024 «Агентство имущественно-правовой безопасности»</span>, Все права
+                    <span class="border-bottom">©2024 «Агентство недвижимости имущественно-правовой безопасности»</span>,
+                    Все права
                     защищены.
                     Designed By <a class="border-bottom" href="https://github.com/erofcon">erofcon</a>
                 </div>
-                <div class="col-md-4 text-center text-md-end">
-                    <div class="footer-menu">
-                        <a href="">Cookies</a>
-                        <a href="">Help</a>
-                        <a href="">FQAs</a>
-                    </div>
-                </div>
+                {#                <div class="col-md-4 text-center text-md-end">#}
+                {#                    <div class="footer-menu">#}
+                {#                        <a href="">Cookies</a>#}
+                {#                        <a href="">Help</a>#}
+                {#                        <a href="">FQAs</a>#}
+                {#                    </div>#}
+                {#                </div>#}
             </div>
         </div>
     </div>

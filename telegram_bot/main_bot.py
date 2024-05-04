@@ -22,7 +22,10 @@ def send_message(message):
     try:
         users = TelegramBotUsers.objects.all()
         for user in users:
-            bot.send_message(chat_id=user.chat_id, text=message)
+            try:
+                bot.send_message(chat_id=user.chat_id, text=message)
+            except Exception:
+                pass
 
     except Exception:
         pass

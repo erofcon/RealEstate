@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure--g4(s49#6u-^8zu^2pvb7$ceh^%4d&o7dr7lg9#*6_*#r65+4u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -118,6 +118,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
@@ -134,7 +135,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Telegram Bot settings
-
-TELEGRAM_BOT_TOKEN = '6939051292:AAGGCKpvlwo_Bw_ECzCJOa1EW_GNzyP7n6A'
+TELEGRAM_BOT_TOKEN = '6999990341:AAGqlgn8S_pbfX13vXzlqng-h_-Ow88CRaM'
+# TELEGRAM_BOT_TOKEN = '6939051292:AAGGCKpvlwo_Bw_ECzCJOa1EW_GNzyP7n6A'
 
 PROXY_URL = 'https://telegg.tu/orig/bot'
