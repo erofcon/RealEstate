@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import ExternalApartments
+from catalog.models import Apartments
 from catalog.models import Images
 
 
@@ -10,7 +10,7 @@ class MultipleFileInput(forms.ClearableFileInput):
 
 class ExternalApartmentsFormModel(forms.ModelForm):
     class Meta:
-        model = ExternalApartments
+        model = Apartments
         fields = (
             'type', 'address', 'floor', 'bedrooms', 'sqft_living', 'wall_material', 'title', 'description', 'price',
             'contacts', 'plan')

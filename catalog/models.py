@@ -23,13 +23,14 @@ class Apartments(models.Model):
     floor = models.IntegerField('Этаж', default=1)
     bedrooms = models.IntegerField('Колличество комнат', default=1)
     sqft_living = models.FloatField('Сколько квадратных метров', default=1)
-    address = models.CharField('Адрес', max_length=500, default='')
-    wall_material = models.CharField('Материал стен', max_length=500, default='')
-    the_developer = models.CharField('Застройщик', max_length=500, default='')
+    address = models.CharField('Адрес', max_length=500, default=None, blank=True, null=True)
+    wall_material = models.CharField('Материал стен', max_length=500, default=None, blank=True, null=True)
+    the_developer = models.CharField('Застройщик', max_length=500, default=None, blank=True, null=True)
     lat = models.FloatField('Широта', blank=True, null=True)
     lon = models.FloatField('Долгота', blank=True, null=True)
     plan = models.ImageField('Планировка', upload_to='media/', blank=True)
-
+    external = models.BooleanField('Создано внешними клиентами?', default=False)
+    contacts = models.TextField('Контакты для связи', blank=True, null=True)
     date = models.DateTimeField('Дата публикации', default=datetime.now())
 
     def __str__(self):
