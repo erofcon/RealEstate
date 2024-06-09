@@ -27,6 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+# DEBUG = False
+#
+# DEBUG = False
+#
+# ALLOWED_HOSTS = ['ramaza89.beget.tech', 'www.ramaza89.beget.tech']
+# #ALLOWED_HOSTS = ['*']
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -125,6 +132,14 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
+# DEBUG = False
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#
+# STATIC_URL = '/static/'
+#
+# STATICFILES_DIRS = []
+
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -134,8 +149,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+TELEGRAM_BOT_TOKEN = ""
 # Telegram Bot settings
-TELEGRAM_BOT_TOKEN = '6999990341:AAGqlgn8S_pbfX13vXzlqng-h_-Ow88CRaM'
+# TELEGRAM_BOT_TOKEN = '6999990341:AAGqlgn8S_pbfX13vXzlqng-h_-Ow88CRaM'
 # TELEGRAM_BOT_TOKEN = '6939051292:AAGGCKpvlwo_Bw_ECzCJOa1EW_GNzyP7n6A'
 
 PROXY_URL = 'https://telegg.tu/orig/bot'

@@ -4,7 +4,7 @@ from catalog.models import Apartments
 
 
 class ExternalApartments(Apartments):
-    contacts = models.TextField('Контакты для связи')
+    contacts = models.TextField('Контакты для связи', blank=True)
     external = models.BooleanField('Создано внешними клиентами?', default=False)
 
     class Meta:

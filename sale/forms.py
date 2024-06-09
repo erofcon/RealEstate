@@ -16,17 +16,18 @@ class ExternalApartmentsFormModel(forms.ModelForm):
             'contacts', 'plan')
 
         widgets = {
-            'type': forms.RadioSelect(attrs={'class': 'form-check-input'}),
-            'address': forms.TextInput(attrs={'class': 'form-control'}),
-            'floor': forms.NumberInput(attrs={'class': 'form-control'}),
-            'bedrooms': forms.NumberInput(attrs={'class': 'form-control'}),
-            'sqft_living': forms.NumberInput(attrs={'class': 'form-control'}),
-            'wall_material': forms.TextInput(attrs={'class': 'form-control'}),
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'description': forms.Textarea(attrs={'class': 'form-control'}),
-            'price': forms.NumberInput(attrs={'class': 'form-control'}),
+            'type': forms.RadioSelect(attrs={'class': 'form-check-input', 'required': True}),
+            'address': forms.TextInput(attrs={'class': 'form-control', 'required': True}),
+            'floor': forms.NumberInput(attrs={'class': 'form-control', 'required': True}),
+            'bedrooms': forms.NumberInput(attrs={'class': 'form-control', 'required': True}),
+            'sqft_living': forms.NumberInput(attrs={'class': 'form-control', 'required': True}),
+            'wall_material': forms.TextInput(attrs={'class': 'form-control', 'required': True}),
+            'title': forms.TextInput(attrs={'class': 'form-control', 'required': True}),
+            'description': forms.Textarea(attrs={'class': 'form-control', 'required': True}),
+            'price': forms.NumberInput(attrs={'class': 'form-control', 'required': True}),
             'contacts': forms.Textarea(
-                attrs={'class': 'form-control', 'placeholder': 'номер телефона, почта, WhatsApp или Telegram'}),
+                attrs={'class': 'form-control', 'placeholder': 'номер телефона, почта, WhatsApp или Telegram',
+                       'required': True}, ),
 
         }
 
